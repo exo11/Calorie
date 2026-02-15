@@ -4,6 +4,10 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [tsconfigPaths(), react(), tailwindcss()]
+export default defineConfig( ({mode}) => { 
+  const isProd = mode === 'production'
+  return {
+    base: isProd ? '/Calorie/' : '/',
+    plugins: [tsconfigPaths(), react(), tailwindcss()]
+  }
 })
