@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-nunito: 'Nunito', sans-serif; 
+  --breakpoint-xs: 23rem;
+}
+
+.scrollbar {
+  scrollbar-width: thin; 
+  scrollbar-color: oklch(80.9% 0.105 251.813) oklch(95.1% 0.026 236.824); 
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 2px;
+  height: 8px; 
+  padding-left: 10px; 
+  margin-left: 10px; 
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: oklch(95.1% 0.026 236.824); 
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: oklch(80.9% 0.105 251.813); 
+  border-radius: 20px; 
+  border: 2px solid oklch(80.9% 0.105 251.813); 
+}
+
+.material-icons {
+  font-size: 24px;
+  pointer-events: none;
+}
+
