@@ -32,6 +32,8 @@ function Input({id, name, holder, verify}: InputProps) {
       <label className={`${labelCls} ${inv}`}>
         <input 
           type="text"
+          inputMode="numeric"
+          pattern='^\d+$'
           className={`${inputCls}`}
           id={id}
           name={name} 
