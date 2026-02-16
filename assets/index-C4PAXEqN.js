@@ -109,7 +109,7 @@ Error generating stack: `+u.message+`
     relative 
     shadow
     border
-   ${A}`,children:h.jsx("input",{type:"text",className:`
+   ${A}`,children:h.jsx("input",{type:"text",inputMode:"numeric",pattern:"^\\d+$",className:`
     w-full 
     h-full 
     text-gray-900 
