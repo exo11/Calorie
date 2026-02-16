@@ -5,10 +5,6 @@ import type { CalcProps } from 'model'
 
 function Calc({state, how, onHow, children}: CalcProps) {
 
-  const addGroup = (n: number) => `
-    group-data-[state=${n}]:bg-blue-300 
-    group-data-[state=${n}]:text-white
-  `
   const contCls = `
     w-full 
     overflow-hidden 
@@ -44,10 +40,10 @@ function Calc({state, how, onHow, children}: CalcProps) {
 	    <div className={contCls}>
 	      <div className={rowCls} data-state={state}>
 	  	    <div className="flex justify-start">
-            <State num={1} group={addGroup(0)}/>
-            <State num={2} group={addGroup(1)}/>
-            <State num={3} group={addGroup(2)}/>
-            <State num={4} group={addGroup(3)}/>
+            <State num={1} group={`group-data-[state=0]:bg-blue-300 group-data-[state=0]:text-white`}/>
+            <State num={2} group={`group-data-[state=1]:bg-blue-300 group-data-[state=1]:text-white`}/>
+            <State num={3} group={`group-data-[state=2]:bg-blue-300 group-data-[state=2]:text-white`}/>
+            <State num={4} group={`group-data-[state=3]:bg-blue-300 group-data-[state=3]:text-white`}/>
           </div>
           {children}
           <div className="block group-data-[state=3]:hidden">
