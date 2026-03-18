@@ -1,11 +1,13 @@
 function Content() {
 
  const childCls = `
+  gsapLineContent
   *:text-[10px] 
   *:text-center 
   *:font-normal 
   *:w-[20%] 
   *:lg:text-[14px]
+  *:opacity-0
 `
   return (
     <div className={`flex w-full ${childCls}`}>

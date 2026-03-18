@@ -28,7 +28,7 @@ function Input({id, name, holder, verify}: InputProps) {
     focus:outline-none
   `
   return (
-    <div className="mb-0 mt-7">
+    <div className="gsapFG mb-0 mt-7 opacity-100">
       <label className={`${labelCls} ${inv}`}>
         <input 
           type="text"

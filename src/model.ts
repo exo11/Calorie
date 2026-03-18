@@ -32,6 +32,11 @@ export interface ISegment {
   border: string
 }
 
+interface ICircle {
+  name: string,
+  pr: string
+}
+
 /* PROPS */
 
 export interface BtnProps {
@@ -53,6 +58,7 @@ export interface StateProps {
 
 export interface LineProps {
   compute: ICompute,
+  state: number,
   onHow: () => void
 }
 
@@ -70,6 +76,7 @@ export interface CardProps {
 export interface CardsProps {
   compute: ICompute,
   plan: string, 
+  state: number,
   onResult: (evt: React.MouseEvent) => void
 }
 
@@ -108,7 +115,7 @@ export interface WrapProps {
 }
 
 export interface SegmentsProps {
-  weight: number, 
+  circle: ICircle, 
   segments: ISegment[]
 }
 
@@ -121,10 +128,12 @@ export interface ColProps {
 
 export interface ResultProps {compute: 
   ICompute, 
-  result: IDiet
+  result: IDiet,
+  state: number
 }
 
 export interface ResultCardProps {
   result: IDiet, 
-  date: string
+  date: string, 
+  state: number
 }

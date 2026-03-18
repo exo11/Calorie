@@ -30,7 +30,7 @@ function Radio({value, label, check, children}: RadioProps) {
     ${before}
   `
   return (
-    <div className="mb-3">
+    <div className="mb-3 gsapRadio">
       <input className="hidden peer/radio" 
         type="radio" 
         name="activity" 

@@ -6,7 +6,7 @@ function RadioGroup({verify}: {verify?: string}) {
 
   return (
     <div className="hidden lg:block lg:w-100">
-      <h5 className={`mb-6 text-lg font-bold lg:pt-6 ${inv}`}>Активность</h5>
+      <h5 className={`gsapRadio mb-6 text-lg font-bold lg:pt-6 ${inv}`}>Активность</h5>
       <Radio value="low" label="Слабая" >
         Сидячая работа, отсутсвие занятий или выполнение легких упраажннений
       </Radio>

@@ -59,9 +59,9 @@ function Calorie() {
   return (
     <Calc state={state} how={how} onHow={onHow}>
       <Form onSubmit={onSubmit} onChange={onChange} verify={verify}/>
-      <Line compute={compute} onHow={onHow}/>
-      <Cards compute={compute} onResult={onResult} plan={result.plan}/>
-      <Result compute={compute} result={result}/>
+      <Line compute={compute} state={state} onHow={onHow} />
+      <Cards compute={compute} state={state} plan={result.plan} onResult={onResult} />
+      <Result compute={compute} result={result} state={state}/>
     </Calc>
   )
 
