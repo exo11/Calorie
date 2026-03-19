@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { useRef } from 'react'
 import {addVerify, calc, initialCompute, initialResult} from 'utils'
+import useAnimation from 'hooks/useAnimation'
 import Calc from 'components/calc/Calc'
 import Form from 'components/form/Form'
 import Line from 'components/line/Line'
@@ -14,6 +16,9 @@ function Calorie() {
   const [compute, setCompute] = useState<ICompute>(initialCompute)
   const [result, setResult] = useState<IDiet>(initialResult)
   const [how, setHow] = useState<boolean>(false)
+  const container = useRef(null)
+
+  useAnimation(state, container, compute)
 
   const onSubmit = (evt: React.FormEvent) => {
     evt.preventDefault()
@@ -57,12 +62,14 @@ function Calorie() {
   const onHow = () => setHow(p => !p)
   
   return (
-    <Calc state={state} how={how} onHow={onHow}>
-      <Form onSubmit={onSubmit} onChange={onChange} verify={verify}/>
-      <Line compute={compute} state={state} onHow={onHow} />
-      <Cards compute={compute} state={state} plan={result.plan} onResult={onResult} />
-      <Result compute={compute} result={result} state={state}/>
-    </Calc>
+    <div ref={container}>
+      <Calc state={state} how={how} onHow={onHow}>
+        <Form onSubmit={onSubmit} onChange={onChange} verify={verify} />
+        <Line compute={compute} onHow={onHow} />
+        <Cards compute={compute} plan={result.plan} onResult={onResult} />
+        <Result compute={compute} result={result} />
+      </Calc>
+    </div>
   )
 
 }

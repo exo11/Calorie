@@ -30,7 +30,7 @@ function Select({id, name, verify, children}: SelectProps) {
     focus:outline-none 
   `
   return (
-    <div className={`gsapFG mb-0 mt-7 ${addCls(name)}`}>
+    <div className={`gsapFormElement mb-0 mt-7 ${addCls(name)}`}>
       <label className={`${labelCls} ${inv}`} htmlFor={`calc${id}`}> 
         <select 
           id={`calc${id}`}

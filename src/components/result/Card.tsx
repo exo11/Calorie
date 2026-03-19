@@ -1,14 +1,8 @@
-import { useRef } from 'react'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
 import type { ResultCardProps } from 'model'
 
-gsap.registerPlugin(useGSAP)
-
-function Card({result, state, date}: ResultCardProps) {
+function Card({result, date}: ResultCardProps) {
 
   const {title, cal, monthMinus, threeMonthMinus, newWeight} = result
-  const container = useRef(null)
 
   const cls = `
     gsapResultCard
@@ -22,21 +16,8 @@ function Card({result, state, date}: ResultCardProps) {
     opacity-0
     transform-[translateY(-100px)]
   `
-  useGSAP(() => {
-    
-    if (state === 3) {
-      gsap.to('.gsapResultCard', { 
-        y: 0, 
-        opacity: 1,
-        duration: .5, 
-        ease: 'bounce.out'
-      })
-    }
-   
-  }, { dependencies: [state], scope: container })
-  
   return (
-    <div ref={container}>
+    <div>
       <div className={cls}>
         <h5 className="mb-5 lg:mb-3">Вы выбрали план похудения:</h5>
         <div>

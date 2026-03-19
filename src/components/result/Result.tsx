@@ -3,7 +3,7 @@ import Col from 'components/result/Col'
 import Card from 'components/result/Card'
 import type { ResultProps } from 'model'
 
-function Result({compute, result, state}: ResultProps) {
+function Result({compute, result}: ResultProps) {
 
   const {weight, ideal, diff, calories} = compute
   const {today, after} = cardsDate()
@@ -74,7 +74,7 @@ function Result({compute, result, state}: ResultProps) {
         
         </div>
 		
-        <Card result={result} date={after} state={state}/>
+        <Card result={result} date={after}/>
 
 	    </div>
     </div>

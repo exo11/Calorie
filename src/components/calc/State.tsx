@@ -3,6 +3,7 @@ import type { StateProps } from "model"
 function State({num, group}: StateProps) {
   
   const cls = `
+    gsapCalcState
     w-4.5 
     h-4.5 
     flex 

@@ -3,6 +3,7 @@ import type { BtnProps } from 'model'
 function Btn({form, children}: BtnProps) {
 
   const cls = `
+    gsapCalcBtn
     flex 
     items-center 
     justify-center 
@@ -19,7 +20,7 @@ function Btn({form, children}: BtnProps) {
     cursor-pointer
     shadow-lg
     shadow-blue-300/50
-    duration-[0.3s]
+    
     hover:bg-sky-300
   `
   return (

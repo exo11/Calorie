@@ -4,7 +4,7 @@ import How from 'components/calc/How'
 import type { CalcProps } from 'model'
 
 function Calc({state, how, onHow, children}: CalcProps) {
-
+  
   const contCls = `
     w-full 
     overflow-hidden 

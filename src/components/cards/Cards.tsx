@@ -1,17 +1,11 @@
-import { useRef } from 'react'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
 import Title from 'components/cards/Title'
 import Card from 'components/cards/Card'
 import CardContent from 'components/cards/CardContent'
 import type { CardsProps, IDiet } from 'model'
 
-gsap.registerPlugin(useGSAP)
-
-function Cards({compute, plan, state, onResult}: CardsProps) {
+function Cards({compute, plan, onResult}: CardsProps) {
   
   const {diet} = compute
-  const container = useRef(null)
   
   const wrapCls = `
     rounded-lg
@@ -37,18 +31,6 @@ function Cards({compute, plan, state, onResult}: CardsProps) {
     scrollbar 
     2xl:justify-between
   `
-  useGSAP(() => {
-    
-    if (state === 2) {
-      gsap.to('.gsapCardsBtn', { 
-        scale: 1, 
-        duration: .5, 
-        ease: 'bounce.out'
-      })
-    }
- 
-  }, { dependencies: [state], scope: container })
-  
   const addCards = (arr: IDiet[]) => arr.map((diet, i) => {
     const choice = `text-sky-400 border-sky-400 [&_button]:bg-sky-300`
     const active = diet.plan === plan ? choice : 'border-gray-200'
@@ -71,7 +53,7 @@ function Cards({compute, plan, state, onResult}: CardsProps) {
   return (
     <div className="hidden group-data-[state=2]:block">
       <Title />
-      <div ref={container} className={rowCls}>
+      <div className={rowCls}>
         {addCards(diet)}
       </div>
     </div>
