@@ -90,12 +90,20 @@ export const lineSegments = ({height, ideal}: ICompute) => {
   const ln = (num: number) => n2(Math.pow(height * 0.01, 2) * num)
   const nt = (num: number) => n2(num + 0.01)
   
+  const style = {
+    disadvantage: {color: 'from-cyan-200 to-teal-300', border: 'border-[#9DD6C9]'},
+    standard: {color: 'from-teal-300 to-yellow-300', border: 'border-[#97BF4C]'},
+    excess: {color: 'from-yellow-300 to-amber-300', border: 'border-[#FBD578]'},
+    obesityOne: {color: 'from-amber-300 to-orange-500', border: 'border-[#FF8A00]'},
+    obesityTwo: {color: 'from-orange-500 to-red-600', border: 'border-[#FF2222]'}
+  }
+
   return [
-    {name: 'disadvantage', s: 0, f: ln(16), color:'bg-[#9DD6C9]', border: 'border-[#9DD6C9] border-7'}, 
-    {name: 'standard', s: nt(ln(16)), f: n2(ideal), color:'bg-[#97BF4C]', border: 'border-[#97BF4C] border-7'},
-    {name: 'excess', s: nt(ideal), f: ln(30), color:'bg-[#FBD578]', border: 'border-[#FBD578] border-7'},
-    {name: 'obesity-one', s: nt(ln(30)), f: ln(35), color:'bg-[#FF8A00]', border: 'border-[#FF8A00] border-7'},
-    {name: 'obesity-two', s: nt(ln(35)), f: ln(35) + 50, color:'bg-[#FF2222]', border: 'border-[#FF2222] border-7'}
+    {name: 'disadvantage', s: 0, f: ln(16), ...style.disadvantage}, 
+    {name: 'standard', s: nt(ln(16)), f: n2(ideal), ...style.standard},
+    {name: 'excess', s: nt(ideal), f: ln(30), ...style.excess},
+    {name: 'obesity-one', s: nt(ln(30)), f: ln(35), ...style.obesityOne},
+    {name: 'obesity-two', s: nt(ln(35)), f: ln(35) + 50, ...style.obesityTwo}
   ]
 
 }

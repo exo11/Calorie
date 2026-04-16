@@ -1,6 +1,8 @@
-import type { ResultCardProps } from 'model'
+import useCtx from 'hooks/useCtx'
 
-function Card({result, date}: ResultCardProps) {
+function Card({date}: {date: string}) {
+
+  const {result} = useCtx()
 
   const {title, cal, monthMinus, threeMonthMinus, newWeight} = result
 
@@ -15,6 +17,9 @@ function Card({result, date}: ResultCardProps) {
     lg:max-w-90 
     opacity-0
     transform-[translateY(-100px)]
+    bg-linear-to-r
+    from-sky-50
+    to-indigo-100
   `
   return (
     <div>

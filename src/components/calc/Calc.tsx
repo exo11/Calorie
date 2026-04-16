@@ -1,9 +1,11 @@
 import State from 'components/calc/State'
 import Btn from 'components/calc/Btn'
 import How from 'components/calc/How'
-import type { CalcProps } from 'model'
+import useCtx from 'hooks/useCtx'
 
-function Calc({state, how, onHow, children}: CalcProps) {
+function Calc({children}: {children: React.ReactNode}) {
+
+  const {state} = useCtx()
   
   const contCls = `
     w-full 
@@ -52,7 +54,7 @@ function Calc({state, how, onHow, children}: CalcProps) {
 		      <div className="hidden">
             <Btn>рассчитать заново</Btn>
           </div>
-          <How how={how} onHow={onHow}/>
+          <How />
 	      </div>
 	    </div>  
     </div>

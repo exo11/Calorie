@@ -9,6 +9,18 @@
   --breakpoint-xs: 23rem;
 }
 
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility btn {
+  @apply cursor-pointer text-sm text-white shadow-blue-300/50 bg-linear-to-b from-sky-300 to-blue-300;
+}
+
+@utility btn-hover {
+  @apply hover:transition hover:duration-500 hover:bg-linear-to-b hover:from-sky-300 hover:to-cyan-300;
+}
+
 .scrollbar {
   scrollbar-width: thin; 
   scrollbar-color: oklch(80.9% 0.105 251.813) oklch(95.1% 0.026 236.824); 
@@ -35,4 +47,3 @@
   font-size: 24px;
   pointer-events: none;
 }
-

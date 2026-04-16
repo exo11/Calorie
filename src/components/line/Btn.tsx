@@ -1,7 +1,11 @@
-function Btn({onHow}: {onHow: () => void}) {
+import useCtx from 'hooks/useCtx'
+
+function Btn() {
+
+  const {onHow} = useCtx()
 
   const cls = `
-    flex 
+    flex
     items-center 
     justify-start 
     w-48 

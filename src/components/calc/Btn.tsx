@@ -4,24 +4,17 @@ function Btn({form, children}: BtnProps) {
 
   const cls = `
     gsapCalcBtn
-    flex 
-    items-center 
-    justify-center 
+    btn
+    btn-hover
+    flex-center
     px-10 
     py-6
-    text-sm 
-    text-white 
     font-bold
-    bg-blue-300 
     rounded-lg
     w-44 
     h-9 
     mt-14
-    cursor-pointer
     shadow-lg
-    shadow-blue-300/50
-    
-    hover:bg-sky-300
   `
   return (
     <button 

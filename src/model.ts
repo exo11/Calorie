@@ -37,17 +37,22 @@ interface ICircle {
   pr: string
 }
 
+export interface IContext {
+  state: number, 
+  how: boolean, 
+  verify?: string, 
+  compute: ICompute, 
+  result: IDiet, 
+  onHow: () => void, 
+  onSubmit: (evt: React.FormEvent) => void,
+  onChange: () => void, 
+  onResult: (evt: React.MouseEvent) => void
+}
+
 /* PROPS */
 
 export interface BtnProps {
   form?: string, 
-  children: React.ReactNode
-}
-
-export interface CalcProps {
-  state: number, 
-  how: boolean, 
-  onHow: () => void,
   children: React.ReactNode
 }
 
@@ -56,32 +61,9 @@ export interface StateProps {
   group: string 
 }
 
-export interface LineProps {
-  compute: ICompute,
-  onHow: () => void
-}
-
-export interface HowProps {
-  how: boolean, 
-  onHow: () => void
-}
-
 export interface CardProps {
   diet: IDiet
-  onResult: (evt: React.MouseEvent) => void, 
   children?: React.ReactNode
-}
-
-export interface CardsProps {
-  compute: ICompute,
-  plan: string, 
-  onResult: (evt: React.MouseEvent) => void
-}
-
-export interface FormProps {
-  verify?: string, 
-  onSubmit: (evt: React.FormEvent) => void,
-  onChange: () => void
 }
 
 export interface InputProps {
@@ -119,17 +101,6 @@ export interface SegmentsProps {
 
 export interface ColProps {
   cls: {col: string, title: string},
-  type: string, 
   title: string, 
   children?: React.ReactNode
-}
-
-export interface ResultProps {compute: 
-  ICompute, 
-  result: IDiet
-}
-
-export interface ResultCardProps {
-  result: IDiet, 
-  date: string
 }

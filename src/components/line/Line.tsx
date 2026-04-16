@@ -4,9 +4,11 @@ import Numbers from 'components/line/Numbers'
 import Segments from 'components/line/Segments'
 import Content from 'components/line/Content'
 import Btn from 'components/line/Btn'
-import type { LineProps } from 'model'
+import useCtx from 'hooks/useCtx'
 
-function Line({compute, onHow}: LineProps) {
+function Line() {
+
+  const {compute} = useCtx()
 
   const {weight, ideal, diff} = compute
   const segments = lineSegments(compute)
@@ -50,7 +52,7 @@ function Line({compute, onHow}: LineProps) {
         <Segments circle={circle} segments={segments}/>
         <Content />
       </div>
-      <Btn onHow={onHow}/>
+      <Btn />
     </div>
   )
 

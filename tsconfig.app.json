@@ -25,10 +25,12 @@
     "noUncheckedSideEffectImports": true,
 
     /* Custom */
-    "baseUrl": "./src", 
     "paths": {
-      "@components/*": ["components/*"],
-      "@utils/*": ["utils/*"]
+      "*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@context/*": ["./src/context/*"]
     }
   },
   "include": ["src"]

@@ -1,10 +1,13 @@
 import Calorie from 'components/Calorie'
+import Ctx from 'components/Ctx'
 import 'App.css'
 
 function App() {
   
   return (
-    <Calorie/>
+    <Ctx>
+      <Calorie/>
+    </Ctx>
   )
 }
 

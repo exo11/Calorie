@@ -1,6 +1,8 @@
-import type { HowProps } from "model"
+import useCtx from 'hooks/useCtx'
 
-function How({how, onHow}: HowProps) {
+function How() {
+
+  const {how, onHow} = useCtx()
 
   const visible = how ? 'visible opacity-100' : 'invisible opacity-0'
   const translate = how ? 'translate-x-0' : 'translate-x-full'
@@ -28,9 +30,7 @@ function How({how, onHow}: HowProps) {
     ${translate}
   `
   const btnCls = `
-    flex
-    justify-center 
-    items-center 
+    flex-center
     py-3 
     px-7
     text-sm 

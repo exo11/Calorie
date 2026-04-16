@@ -1,4 +1,4 @@
-import type { StateProps } from "model"
+import type { StateProps } from 'model'
 
 function State({num, group}: StateProps) {
   
@@ -6,9 +6,7 @@ function State({num, group}: StateProps) {
     gsapCalcState
     w-4.5 
     h-4.5 
-    flex 
-    justify-center 
-    items-center 
+    flex-center
     text-gray-400 
     rounded-full 
     ${group}

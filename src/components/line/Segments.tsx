@@ -10,6 +10,9 @@ function Segments({circle, segments}: SegmentsProps) {
     lg:h-3  
     transform-[translateX(-50px)]
     opacity-0
+    bg-linear-to-r
+    border-l-[2px]
+    border-l-white
   `
   const ballCls = `
     gsapLineBall
@@ -22,8 +25,9 @@ function Segments({circle, segments}: SegmentsProps) {
     bg-white 
     rounded-full 
     -top-1.5 
-    z-1 
+    z-100 
     opacity-0
+    border-7
   `
   const addSegments = (arr: ISegment[]) => arr.map(({name, color, border}, i) => {
     
